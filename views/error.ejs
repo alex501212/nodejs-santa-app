@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Error Occurred</title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Error Processing your Request :(</h1>
+    </header>
+
+    <main>
+      <p class="bold">
+        <% let msg = ""; %>
+        <% 
+        // specify error message based on error
+        if (error === "user not found") {
+            msg = "The username that you entered was not found in our records, please try again."
+        } else if(error === "age invalid"){
+            msg = "Users under the age of 10 cannot send letters to Santa. Sorry :("
+        }else if(error === "dob invalid"){
+            msg = "The date of birth related to your account is invalid."
+        }else {
+            msg = "An unknown error occurred."
+        } %>
+        <%= msg %></p>
+      <a href="http://localhost:3000">Retry?</a>
+    </main>
+  </body>
+</html>
